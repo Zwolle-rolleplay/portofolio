@@ -16,15 +16,14 @@
     html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:var(--text);scroll-behavior:smooth;}
     body{background:var(--bg);background-attachment:fixed;}
     header{padding:20px 24px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;backdrop-filter:blur(6px);z-index:999;background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02));border-bottom:1px solid rgba(0,0,0,0.05)}
-    .logo img{height:40px;}
+    .logo{font-weight:800;font-size:22px;}
     nav a{margin-left:14px;text-decoration:none;padding:10px 14px;border-radius:10px;color:inherit;cursor:pointer}
     nav a.active{background:var(--card)}
     .container{max-width:1100px;margin:0 auto;padding:60px 24px;min-height:90vh;display:flex;flex-direction:column;justify-content:center}
     .card{background:var(--glass);padding:28px;border-radius:20px;box-shadow:0 8px 40px rgba(0,0,0,0.12);margin:20px 0}
     .projects-grid,.highlight-projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;margin-top:24px}
-    .project{padding:16px;border-radius:16px;background:linear-gradient(180deg,#ffffff22,#00000008);display:flex;flex-direction:column;justify-content:flex-start;align-items:center}
+    .project{padding:16px;border-radius:16px;background:linear-gradient(180deg,#ffffff22,#00000008);display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start}
     .project h3{margin:8px 0 6px 0}
-    .project img{width:100%;border-radius:12px;margin-bottom:10px}
     footer{margin-top:36px;padding:18px;text-align:center;opacity:0.9}
     .page{display:none}
     .page.active{display:block}
@@ -38,7 +37,7 @@
 </head>
 <body>
   <header>
-    <div class="logo"><img src="logo.png" alt="Thijs Kurk Logo"></div>
+    <div class="logo">Thijs Kurk</div>
     <nav>
       <a data-link="home" class="active">Home</a>
       <a data-link="projects">Projecten</a>
@@ -104,16 +103,16 @@
 
   <script>
     const projects=[
-      {title:'AntiCheat',desc:'Detecteert en blokkeert cheaters op Paper/Spigot servers. (Nog niet uitgebracht)',img:'images/anticheat.png'},
-      {title:'AutoBackups',desc:'Automatische wereldbackups met eenvoudige herstelopties. (Nog niet uitgebracht)',img:'images/autobackups.png'},
-      {title:'EconomyPlus',desc:'Schaalbare economy-plugin met shops en transacties. (Nog niet uitgebracht)',img:'images/economyplus.png'},
-      {title:'TeleportManager',desc:'Geavanceerde teleport-opties met cooldowns en permissies. (Nog niet uitgebracht)',img:'images/teleportmanager.png'},
-      {title:'CustomMobs',desc:'Unieke mobs met aangepaste AI en drops. (Nog niet uitgebracht)',img:'images/custommobs.png'},
-      {title:'VoteRewards',desc:'Beloont spelers voor stemmen op de server. (Nog niet uitgebracht)',img:'images/voterewards.png'},
-      {title:'SkyWarsManager',desc:'SkyWars ervaring met arena’s en matchmaking. (Nog niet uitgebracht)',img:'images/skywarsmanager.png'},
-      {title:'ShopSystem',desc:'GUI-shop systeem voor server-economie. (Nog niet uitgebracht)',img:'images/shopsystem.png'},
-      {title:'ClaimProtector',desc:'Land-claim en protectie plugin. (Nog niet uitgebracht)',img:'images/claimprotector.png'},
-      {title:'HubScoreboard',desc:'Dynamisch scoreboard voor hubs. (Nog niet uitgebracht)',img:'images/hubscoreboard.png'}
+      {title:'AntiCheat',desc:'Detecteert en blokkeert cheaters op Paper/Spigot servers. (Nog niet uitgebracht)'},
+      {title:'AutoBackups',desc:'Automatische wereldbackups met eenvoudige herstelopties. (Nog niet uitgebracht)'},
+      {title:'EconomyPlus',desc:'Schaalbare economy-plugin met shops en transacties. (Nog niet uitgebracht)'},
+      {title:'TeleportManager',desc:'Geavanceerde teleport-opties met cooldowns en permissies. (Nog niet uitgebracht)'},
+      {title:'CustomMobs',desc:'Unieke mobs met aangepaste AI en drops. (Nog niet uitgebracht)'},
+      {title:'VoteRewards',desc:'Beloont spelers voor stemmen op de server. (Nog niet uitgebracht)'},
+      {title:'SkyWarsManager',desc:'SkyWars ervaring met arena’s en matchmaking. (Nog niet uitgebracht)'},
+      {title:'ShopSystem',desc:'GUI-shop systeem voor server-economie. (Nog niet uitgebracht)'},
+      {title:'ClaimProtector',desc:'Land-claim en protectie plugin. (Nog niet uitgebracht)'},
+      {title:'HubScoreboard',desc:'Dynamisch scoreboard voor hubs. (Nog niet uitgebracht)'}
     ];
 
     const list=document.getElementById('projects-list');
@@ -123,14 +122,14 @@
       // Projecten pagina
       const d=document.createElement('div');
       d.className='project reveal';
-      d.innerHTML=`<img src="${p.img}" alt="${p.title}"><h3>${p.title}</h3><p>${p.desc}</p>`;
+      d.innerHTML=`<h3>${p.title}</h3><p>${p.desc}</p>`;
       list.appendChild(d);
 
       // Home pagina highlight (eerste 3 projecten)
       if(i<3){
         const h=document.createElement('div');
         h.className='project reveal';
-        h.innerHTML=`<img src="${p.img}" alt="${p.title}"><h3>${p.title}</h3><p>${p.desc}</p>`;
+        h.innerHTML=`<h3>${p.title}</h3><p>${p.desc}</p>`;
         homeProjects.appendChild(h);
       }
     });
